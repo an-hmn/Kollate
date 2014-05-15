@@ -14,16 +14,16 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Projects", about_path %></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">About</a></li>
+        <li class="active"><%= link_to "Dashboard", about_path %></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Inspiration</a></li>
+        <li><a href="#">About Kollate</a></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn btn-primary">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
@@ -33,6 +33,6 @@
           <li><%= link_to "Login", new_user_session_path %></li>
         <% end %>
       </ul>
-    </div> <!-- /.navbar-collapse -->
-  </div> <!-- /.container-fluid -->
+    </div> 
+  </div> 
 </nav>

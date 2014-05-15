@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -31,6 +32,8 @@ gem 'protected_attributes'
 gem 'devise'
 # to make forms prettier
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
+# Allows the uploading of images - make sure you have imagemagick installed on your local
+gem "paperclip", "~> 4.1"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
