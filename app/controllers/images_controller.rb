@@ -1,30 +1,38 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user! # except: [:index]
 
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @images = current_user.images.all
   end
 
   # GET /images/1
   # GET /images/1.json
   def show
+    @image = current_user.image.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @image }
+    end
   end
 
   # GET /images/new
   def new
-    @image = Image.new
+    @image = current_user.images.new
   end
 
   # GET /images/1/edit
   def edit
+    @image = current_user.images.find(params[:id])
   end
 
   # POST /images
   # POST /images.json
   def create
-    @image = Image.new(image_params)
+    @image = current_user.images.new(params[:image])
 
     respond_to do |format|
       if @image.save
@@ -40,6 +48,8 @@ class ImagesController < ApplicationController
   # PATCH/PUT /images/1
   # PATCH/PUT /images/1.json
   def update
+    @image = current_user.images.find(params[:id])
+
     respond_to do |format|
       if @image.update(image_params)
         format.html { redirect_to @image, notice: 'Image was successfully updated.' }
@@ -54,6 +64,7 @@ class ImagesController < ApplicationController
   # DELETE /images/1
   # DELETE /images/1.json
   def destroy
+    @image = current_user.images.find(params[:id])
     @image.destroy
     respond_to do |format|
       format.html { redirect_to images_url }

@@ -15,7 +15,10 @@ class Image < ActiveRecord::Base
 
 	validates :image, presence: true
 	validates :title, presence: true
+	validates :user_id, presence: true
+	
 	has_many :colours
 	has_many :tags
 	belongs_to :projects
+	belongs_to :user
 end
