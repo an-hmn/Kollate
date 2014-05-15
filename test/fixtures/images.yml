@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: images
+#
+#  id         :integer          not null, primary key
+#  image      :text
+#  title      :string(255)
+#  notes      :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyText
+  title: MyString
+  notes: MyText
+
+two:
+  image: MyText
+  title: MyString
+  notes: MyText
