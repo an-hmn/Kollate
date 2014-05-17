@@ -1,0 +1,28 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well">
+			<p>
+				<strong>Title:</strong>
+				<%= @project.title %>
+			</p>
+			<p>
+				<strong>Client:</strong>
+				<%= @project.client %>
+			</p>
+			<p>
+				<strong>Brief:</strong>
+				<%= @project.brief %>
+			</p>
+			<p>
+				<strong>Sidenotes:</strong>
+				<%= @project.sidenotes %>
+			</p>
+				<% if current_user == @project.user %>
+					<%= link_to 'Edit', edit_project_path(@project) %> |
+				<% end %>
+				<%= link_to 'Back', projects_path %>
+		</div>
+	</div>
+</div>

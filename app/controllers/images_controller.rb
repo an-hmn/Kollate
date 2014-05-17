@@ -11,6 +11,7 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
+
     @images = current_user.images.find(params[:id])
 
     respond_to do |format|

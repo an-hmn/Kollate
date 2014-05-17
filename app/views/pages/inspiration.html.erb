@@ -1,55 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Full Court Shots | Dribbble shots in all their glory.</title>
-	<meta name="description" content="A way to view all the lastest and most popular bits of tasty Dribbble design goodness.">
-	<meta name="author" content="Tyler Gaw http://www.tylergaw.com">
-	<link rel="shortcut icon" href="favicon.ico"> 
-	<link rel="stylesheet" href="css/core.css">
-	<link rel="stylesheet" href="css/jquery.fancybox-1.3.1.css">
-	<script type="text/javascript">
-
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-24386968-2']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Dribbble Popular API with jQuery</title>
+	<link rel="stylesheet" href="stylesheets/core.css">
+  <script type="text/javascript" src="javascripts/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.jribbble.min.js"></script>
+ <!--  // <script type="text/javascript" src="javascripts/masonry.pkgd.min.js"></script> -->
+<!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 </head>
+
 <body>
-	<ul id="controls">
+	<div id="w">
+		<h1>Inspiration</h1>
 		
-		<li id="list-control">
-			<a>List</a>
-			<p class="control-content">
-				<select id="list-select">
-					<option value="everyone">Everyone</option>
-					<option value="popular">Popular</option>
-					<option value="debuts">Debuts</option>
-					<option value="players" class="needs-input">Player</option>
-					<option value="followed" class="needs-input">Followed</option>
-				</select>
-			</p>
-		</li>
-		<li id="info-control">
-			<a>Info</a>
-			<p class="control-content">
-				1. Follow <a href="http://twitter.com/thegaw">@thegaw</a> 2. Use <a href="http://tylergaw.com/lab/jribbble">Jribbble</a> 3. Profit!!!
-			</p>
-		</li>
-	</ul>
-	
-	<div id="loader">
-		<p>Loading shots...</p>
+		<nav>
+			<a href="#" id="p1" class="pagination sel">1</a>
+			<a href="#" id="p2" class="pagination">2</a>
+			<a href="#" id="p3" class="pagination">3</a>
+			<a href="#" id="p4" class="pagination">4</a>
+			<a href="#" id="p5" class="pagination">5</a>
+			<a href="#" id="p6" class="pagination">6</a>
+			<a href="#" id="p7" class="pagination">7</a>
+			<a href="#" id="p8" class="pagination">8</a>
+			<a href="#" id="p9" class="pagination">9</a>
+		</nav>
+
+		<div id="container">
+			<ul id="shotsListing" class="clearfix">
+				<strong>Loading...</strong>
+			</ul>
+		</div>
 	</div>
 	
-	<script src="js/lib/fcs.lib.min.js"></script>
-	<script src="js/fcs.js"></script>	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			getShotsList(1);
+		
+			$("nav .pagination").click(function(e){
+				e.preventDefault();
+				
+				$(this).siblings(".sel").removeClass("sel");
+				$(this).addClass("sel");
+				
+				var newnum = $(this).html();
+				getShotsList(newnum);
+			});
+			
+			function getShotsList(p){
+				$.jribbble.getShotsByList("popular", function(data){
+	    		var html = [];
+	
+	    		$.each(data.shots, function (i, shot) {
+	          html.push('<li>');
+	          html.push('<a href="' + shot.url + '" target="_blank" class="linkc">');
+	          html.push('<img src="' + shot.image_teaser_url + '" alt="' + shot.title + '">');
+						html.push('</a></li>');
+	    		});
+	
+	    	$('#shotsListing').html(html.join(''));
+	    	}, {page: p, per_page: 36});			
+			}
+
+		});
+	</script>
 </body>
 </html>

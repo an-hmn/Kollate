@@ -1,11 +1,18 @@
-<%= simple_form_for(@image, html: { class: "form-horizontal"}) do |f| %>
+<%= simple_form_for(@image, html: {:multipart => true}) do |f| %>
   <%= f.error_notification %>
 
-    <%= f.input :image %>
-    <%= f.input :title %>
+    <%= f.input :title, label: "Enter a title" %>
     <%= f.input :notes, as: :text, input_html: { rows: "2" } %>
-
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
-  </div>
+    <p>
+    	<%= f.file_field :source, :accept => "image/gif, image/jpeg, image/svg, image/jpg, image/png", required: :required %>
+    </p>
+	<p>
+		<%= f.label :remote_source_url, "or URL" %>
+		<%= f.text_field :remote_source_url %>
+	</p>
+		<div class="form-actions">
+		<%= f.button :submit, class: "btn btn-primary" %>
+		</div>
 <% end %>
+
+

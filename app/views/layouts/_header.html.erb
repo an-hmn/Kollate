@@ -14,19 +14,20 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Dashboard", about_path %></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Inspiration</a></li>
-        <li><a href="#">About Kollate</a></li>
+        <li class="active"><%= link_to "Dashboard", dashboard_path %></li>
+        <li><%= link_to "Projects", projects_path %></li>
+        <li><%= link_to "Inspiration", inspiration_path %></li>
+        <li><%= link_to "About Kollate", about_path %></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn btn-info">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+          <li><%= link_to "Add +", new_image_path %></li>
           <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>

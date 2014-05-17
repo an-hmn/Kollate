@@ -11,10 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140515091145) do
+ActiveRecord::Schema.define(version: 20140517034637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "colours", force: true do |t|
+    t.string "hexcode"
+  end
 
   create_table "images", force: true do |t|
     t.text     "image"
@@ -23,9 +27,23 @@ ActiveRecord::Schema.define(version: 20140515091145) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "source"
   end
 
   add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
+
+  create_table "projects", force: true do |t|
+    t.string   "title"
+    t.text     "brief"
+    t.date     "deadline"
+    t.text     "sidenotes"
+    t.string   "client"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

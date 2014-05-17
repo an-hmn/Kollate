@@ -1,0 +1,309 @@
+/*- General ------------------------------------------------------------------------------------------*/
+* { margin: 0px; padding: 0px; }
+hr { display: none; }
+h2, h3, h4, h5, h6 { font-size: 100%; }
+section, header, nav, footer { display: block; }
+li { list-style: none inside;}
+fieldset, img { border: none; }
+
+
+body {
+  color: #000;
+  font-family: helvetica, arial sans-serif;
+  font-size: 12px;
+  min-width: 208px;
+  position: relative;
+}
+
+#w nav a {
+  color: rgb(22, 166, 199);
+  font-size: 16px;
+}
+
+#shotsListing {
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 5px 0 20px 0;
+  -webkit-transition: width 0.2s ease-out;
+  width: 832px;
+}
+
+#shotsListing li {
+  /*border: 2px solid transparent;*/
+  cursor: pointer;
+  display: block;
+  height: 150px;
+  float: left;
+  width: 200px;
+  -webkit-transition: border 0.2s ease-out;
+}
+
+#shotsListing li a {
+  color: #f2f2f2;
+  display: block;
+  height: 150px;
+  overflow: hidden;
+  width: 200px;
+}
+  
+#shotsListing li:hover {
+  border-color: #f2f2f2;
+  -webkit-transition: border-color 0.15s ease-out;
+}
+
+#shotsListing li img {
+  display: block;
+  padding: 6px;
+}
+
+/*- Controls -------------------------------------------------------------------------------------------*/
+
+#controls {
+  left: 0;
+  position: fixed;
+  top: 0px;
+  z-index: 800;
+}
+  
+#controls li {
+  background: rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #3f3f3f;
+  display: block;
+  overflow: hidden;
+  width: 30px;
+}
+
+#controls #info-control {
+  border-bottom-color: #3f3f3f;
+  border-top: 1px solid #3f3f3f;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/*- Controls Active -------------------------------------------------------------------------------------------*/
+
+  #controls li.active
+  {
+    -webkit-border-bottom-right-radius: 6px;
+    -moz-border-radius-bottomright: 6px;
+    border-bottom-right-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topright: 6px;
+    border-top-right-radius: 6px;
+    padding-right: 10px;
+    width: auto;
+  }
+    
+    #controls #list-control.active
+    {
+      border-bottom-color: #3f3f3f;
+    }
+    
+    #controls #info-control.active
+    {
+      border-top-color: 1px solid #3f3f3f;
+    }
+
+/*- Controls <a> -------------------------------------------------------------------------------------*/
+  
+  #controls li > a
+  {
+    background: transparent url(../images/controls_sprite.png) no-repeat center 7px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 30px;
+    overflow: hidden;
+    text-indent: -300em;
+    width: 30px;
+  }
+  
+    #controls #info-control > a
+    {
+      background-position: center -38px;
+      -webkit-border-bottom-right-radius: 6px;
+      -moz-border-radius-bottomright: 6px;
+      border-bottom-right-radius: 6px;
+    }
+    
+      #controls #info-control.active > a
+      {
+        -webkit-border-bottom-right-radius: 0px;
+        -moz-border-radius-bottomright: 0px;
+        border-bottom-right-radius: 0px;
+      }
+  
+    #controls li > a:hover,
+    #controls li.active > a
+    {
+      background-color: #191919;
+    }
+
+/*- Controls Content ---------------------------------------------------------------------------------*/
+  
+  .control-content
+  {
+    color: #f2f2f2;
+    display: none;
+    line-height: 2.5em;
+    padding: 0px 0 0 10px;
+  }
+    
+    .control-content form
+    {
+      display: inline;
+      padding-left: 4px;
+    }
+    
+    .control-content input
+    {
+      border: none;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      margin-left: 4px;
+      padding: 2px 6px;
+    }
+    
+      .control-content input.inactive
+      {
+        color: #bbb;
+      }
+    
+/*- Controls Content active -----------------------------------------------------------------------------*/ 
+  
+    #controls li.active .control-content
+    {
+      display: block;
+      float: right;
+    }
+
+/*- Controls Content <a> -----------------------------------------------------------------------------*/
+  
+  .control-content a
+  {
+    color: #f36500;
+  }
+  
+    .control-content a:hover
+    {
+      text-decoration: none;
+    }
+
+/*- Loading ------------------------------------------------------------------------------------------*/
+
+#loader {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-top: 1px solid #3f3f3f;
+  bottom: 0px;
+  color: #f2f2f2;
+  display: none;
+  font-size: 11px;
+  padding: 8px 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+#loader p {
+  background: transparent url(../images/loader.gif) no-repeat left center;
+  height: 16px;
+  line-height: 1.5em;
+  margin: 0 auto;
+  width: 150px;
+}
+
+/*- Error pages --------------------------------------------------------------------------------------*/
+
+.error-page {
+  color: #f3f3f3;
+  font-size: 3.5em;
+  margin: 0 auto;
+  text-align: center;
+  width: 830px;
+}
+
+.error-page h1 {
+  color: rgba(255, 255, 255, 0.12);
+  font-size: 12em;
+  line-height: 1em;
+  opacity: 0.28;
+  text-shadow: #000 -1px -2px 1px;
+  overflow: hidden;
+}
+
+.error-page div {
+  margin-bottom: -290px;
+  position: relative;
+  top: -290px;
+}
+  
+.error-page p {
+  color: #A0A0A0;
+  font-size: 0.8em;
+  margin-top: 8px;
+}
+
+.error-page a {
+  color: #f36500;
+}
+  
+.error-page a:hover {
+  text-decoration: underline;
+}
+
+/*- Different size screens media queries ---------------------------------------------------*/
+
+@media screen and (max-width: 3119px) {
+  #shotsListing { width: 2912px; }
+}
+
+@media screen and (max-width: 2911px) {
+  #shotsListing { width: 2704px; }
+}
+
+@media screen and (max-width: 2703px) {
+  #shotsListing { width: 2496px; }
+}
+
+@media screen and (max-width: 2495px) {
+  #shotsListing { width: 2288px; }
+}
+
+@media screen and (max-width: 2287px) {
+  #shotsListing { width: 2080px; }
+}
+
+@media screen and (max-width: 2079px) {
+  #shotsListing { width: 1872px; }
+}
+
+@media screen and (max-width: 1871px) {
+  #shotsListing { width: 1664px; }
+}
+
+@media screen and (max-width: 1663px) {
+  #shotsListing { width: 1456px; }
+}
+
+@media screen and (max-width: 1455px) {
+  #shotsListing { width: 1248px; }
+}
+
+@media screen and (max-width: 1247px) {
+  #shotsListing { width: 1040px; }
+}
+
+@media screen and (max-width: 1039px) {
+  #shotsListing { width: 832px; }
+}
+
+@media screen and (max-width: 831px) {
+  #shotsListing { width: 624px; }
+}
+
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 623px) {
+  #shotsListing { width: 416px; }
+}
