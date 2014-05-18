@@ -1,4 +1,6 @@
 Kollate::Application.routes.draw do
+  resources :moodboards
+
   resources :projects
 
   resources :images

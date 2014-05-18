@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+<title>Testing</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="javascripts/bootstrap-datepicker.js">
+<link rel="stylesheet" href="stylesheets/datepicker.css">
+</script>
+ </head>
 
 <%= simple_form_for(@project, html: {:multipart => true}) do |f| %>
   <%= f.error_notification %>
@@ -7,6 +16,14 @@
 
   <div><%= f.label :client %><br />
   <%= f.text_field :client, autofocus: true %></div>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#example1').datepicker({
+      format: "dd/mm/yyyy"
+      });  
+    });
+  </script>
 
   <div><%= f.label :brief %><br /> 
     <%= f.text_area :brief, :cols => "80", :rows => "10" %></div>
