@@ -15,7 +15,7 @@
 class Project < ActiveRecord::Base
 	attr_accessible :title, :brief, :deadline, :client, :sidenotes, :colour_id, :user_id, :moodboard_id
     belongs_to :user
-    has_many :images
+    has_many :images, through: :moodboards
 
     validates :title, presence: true
     

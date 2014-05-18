@@ -4,12 +4,17 @@ class MoodboardsController < ApplicationController
   # GET /moodboards
   # GET /moodboards.json
   def index
+<<<<<<< HEAD
     @moodboards = current_user.moodboards.all
+=======
+    @moodboards = Moodboard.all
+>>>>>>> c27ed90d4745e0c2d1db82c5add0bb84192ab8b4
   end
 
   # GET /moodboards/1
   # GET /moodboards/1.json
   def show
+<<<<<<< HEAD
 
       @moodboards = current_user.moodboards.find(params[:id])
 
@@ -17,22 +22,35 @@ class MoodboardsController < ApplicationController
         format.html
         format.json { render json: @image }
     end
+=======
+>>>>>>> c27ed90d4745e0c2d1db82c5add0bb84192ab8b4
   end
 
   # GET /moodboards/new
   def new
+<<<<<<< HEAD
     @moodboard = current_user.moodboards.new
+=======
+    @moodboard = Moodboard.new
+>>>>>>> c27ed90d4745e0c2d1db82c5add0bb84192ab8b4
   end
 
   # GET /moodboards/1/edit
   def edit
+<<<<<<< HEAD
     @moodboard = current_user.moodboards.find(params[:id])
+=======
+>>>>>>> c27ed90d4745e0c2d1db82c5add0bb84192ab8b4
   end
 
   # POST /moodboards
   # POST /moodboards.json
   def create
+<<<<<<< HEAD
     @modboard = current_user.moodboards.new(params[:moodboard])
+=======
+    @moodboard = Moodboard.new(moodboard_params)
+>>>>>>> c27ed90d4745e0c2d1db82c5add0bb84192ab8b4
 
     respond_to do |format|
       if @moodboard.save

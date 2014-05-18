@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140517124506) do
+=======
+ActiveRecord::Schema.define(version: 20140517115222) do
+>>>>>>> c27ed90d4745e0c2d1db82c5add0bb84192ab8b4
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,8 +39,16 @@ ActiveRecord::Schema.define(version: 20140517124506) do
   create_table "moodboards", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
   end
 
+=======
+    t.integer  "project_id"
+  end
+
+  add_index "moodboards", ["project_id"], name: "index_moodboards_on_project_id", using: :btree
+
+>>>>>>> c27ed90d4745e0c2d1db82c5add0bb84192ab8b4
   create_table "projects", force: true do |t|
     t.string   "title"
     t.text     "brief"
