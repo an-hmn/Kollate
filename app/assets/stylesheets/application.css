@@ -12,12 +12,17 @@
  *= require_tree .
  */
 
+/*Body text on front page*/
 .maintext {
   margin-bottom: 100px;
   font-size: 18px;
   line-height: 1.2em;
   font-family: 'Lato', sans-serif;
   color: black;
+}
+
+.dash {
+	margin-bottom: 200px;
 }
 
 .bg {
@@ -30,8 +35,14 @@
   z-index: -1;
 }
 
+/*Kollate logo on top left corner*/
 .logo {
 	margin-top: -10px;
+}
+
+#target {
+	height: 555px;
+	width: 710px;
 }
 
 #signup_box {
