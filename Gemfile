@@ -26,7 +26,8 @@ gem 'devise'
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
 # Allows the uploading of images - make sure you have imagemagick installed on your local
 gem 'carrierwave'
-# gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+# For resizing of images
+gem 'mini_magick', '~> 3.7.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
