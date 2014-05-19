@@ -1,12 +1,13 @@
-<!DOCTYPE html>
- <html>
- <head>
-<title>Testing</title>
-<meta charset="utf-8">
-<script type="text/javascript" src="javascripts/bootstrap-datepicker.js">
-<link rel="stylesheet" href="stylesheets/datepicker.css">
-</script>
- </head>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="javascripts/jquery-1.11.1.js"></script>
+  <script src="javascripts/jquery-ui-1-10-4.custom.js"></script>
+</head>
+<body>
 
 <%= simple_form_for(@project, html: {:multipart => true}) do |f| %>
   <%= f.error_notification %>
@@ -17,19 +18,14 @@
   <div><%= f.label :client %><br />
   <%= f.text_field :client, autofocus: true %></div>
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $('#example1').datepicker({
-      format: "dd/mm/yyyy"
-      });  
-    });
-  </script>
+  <div><%= f.label :deadline %><br />
+  <%= f.date_field :deadline, autofocus: true %></div>  
 
   <div><%= f.label :brief %><br /> 
-    <%= f.text_area :brief, :cols => "80", :rows => "10" %></div>
+  <%= f.text_area :brief, :cols => "80", :rows => "10" %></div>
 
   <div><%= f.label :sidenotes %><br />
-    <%= f.text_area :sidenotes, :cols => "80", :rows => "6" %></div>
+  <%= f.text_area :sidenotes, :cols => "80", :rows => "6" %></div>
 
   <div class"form-actions">
     <%= f.submit "Create Project", class: "btn btn-primary" %>
@@ -42,3 +38,5 @@
 
 
 
+
+ 

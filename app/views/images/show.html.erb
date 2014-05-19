@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
+
 </head>
 <body>
 
@@ -28,9 +29,6 @@
     <div class="swatches">
       <div class="swatch" style="background-color: rgb({{color.0}}, {{color.1}}, {{color.2}})"></div>
     </div>
-    <div class="function-code">
-      <code>colorThief.getColor(image):{{elapsedTimeForGetColor}}ms</code>
-    </div>
   </div>
   <div class="function get-palette">
     <h3 class="function-title">Palette</h3>
@@ -40,9 +38,6 @@
           <div class="swatch" style="background-color: rgb({{0}}, {{1}}, {{2}})"></div>
         {{/palette}}
       </div>
-    </div>
-    <div class="function-code">
-      <code>colorThief.getPalette(image):{{elapsedTimeForGetPalette}}ms</code>
     </div>
   </div>
 </script>
@@ -56,14 +51,123 @@
 
 <div class="row">
 <div class="span6 offset3">
-      <%= image_tag @image.source %>
+      <%= image_tag @image.source, :id => "target" %>
+      <div class="color-thief-output"></div>
     <p>
       <% if current_user == @image.user %>
-        <%= link_to 'Edit', edit_image_path(@image) %> |
+        <%= link_to 'Edit', edit_project_image_path(@project, @image) %> |
       <% end %>
-      <%= link_to 'Back', images_path %>
+      <%= link_to 'Back', project_images_path(@project) %>
 </div>
 </div>
+
+<style>
+
+
+/* line 32, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* Images */
+/* line 81, ../sass/app.sass */
+img {
+  display: block;
+}
+
+/* -- Layout ------------------------------------------------------------------ */
+/* line 86, ../sass/app.sass */
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* line 93, ../sass/app.sass */
+.intro {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+/* line 105, ../sass/app.sass */
+.image-section {
+  margin-bottom: 80px;
+  background: #2b2b2b;
+}
+/* line 108, ../sass/app.sass */
+.image-section .image-wrap {
+  position: relative;
+  background: #444444;
+}
+
+/* line 175, ../sass/app.sass */
+.color-thief-output {
+  padding: 20px;
+  margin-bottom: 26px;
+  background-color: #eeeeee;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* line 181, ../sass/app.sass */
+.color-thief-output .function-title {
+  color: #444444;
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 185, ../sass/app.sass */
+.function {
+  margin-bottom: 10px;
+}
+
+/* line 188, ../sass/app.sass */
+.swatches {
+  *zoom: 1;
+}
+
+.swatches:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.swatch {
+  width: 60px;
+  height: 30px;
+  margin: 0 2px 2px 0;
+  background: #dddddd;
+  float: left;
+}
+
+canvas {
+  display: none;
+}
+
+/* -- Responsive design -------------------------------------------------------------- */
+@media only screen and (max-width: 480px) {
+  /* line 300, ../sass/app.sass */
+  body {
+    margin: 80px 0 40px 0;
+    font-size: 15px;
+  }
+
+  /* line 303, ../sass/app.sass */
+  .intro {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+@media only screen and (min-width: 640px) {
+  /* line 325, ../sass/app.sass */
+  .examples .image-wrap {
+    min-height: 450px;
+  }
+}
+</style>
 
 </body>
 </html>

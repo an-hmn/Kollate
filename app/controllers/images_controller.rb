@@ -5,7 +5,8 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = current_user.images.all
+    @project = Project.find params[:project_id]
+    @images = @project.moodboard.images.all
   end
 
   # GET /images/1
@@ -13,6 +14,7 @@ class ImagesController < ApplicationController
   def show
 
     @images = current_user.images.find(params[:id])
+    @project = Project.find params[:project_id]
 
     respond_to do |format|
       format.html
@@ -22,23 +24,27 @@ class ImagesController < ApplicationController
 
   # GET /images/new
   def new
-    @image = current_user.images.new
-
+    @project = Project.find params[:project_id]
+    @image = @project.moodboard.images.new
   end
 
   # GET /images/1/edit
   def edit
     @image = current_user.images.find(params[:id])
+    @project = Project.find params[:project_id]
   end
 
   # POST /images
   # POST /images.json
   def create
     @image = current_user.images.new(params[:image])
+    @project = Project.find params[:project_id]
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        @project.moodboard.images << @image
+        format.html { redirect_to project_images_path(@project.id, @image.id), notice: 'Image was successfully created.' }
+
         format.json { render action: 'show', status: :created, location: @image }
       else
         format.html { render action: 'new' }
@@ -69,7 +75,7 @@ class ImagesController < ApplicationController
     @image = current_user.images.find(params[:id])
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to images_url }
+      format.html { redirect_to project_images_url }
       format.json { head :no_content }
     end
   end

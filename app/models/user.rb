@@ -27,5 +27,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
   has_many :images
-  # has_many :projects
+  has_many :projects
+  has_many :moodboards, :through => :projects
 end

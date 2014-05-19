@@ -12,7 +12,7 @@
   <tbody>
     <% @moodboards.each do |moodboard| %>
       <tr>
-        <td><%= link_to 'Show', moodboard %></td>
+        <td><%= link_to 'Show', project_moodboard %></td>
         <td><%= link_to 'Edit', edit_moodboard_path(moodboard) %></td>
         <td><%= link_to 'Destroy', moodboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

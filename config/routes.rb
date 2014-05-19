@@ -1,9 +1,9 @@
 Kollate::Application.routes.draw do
-  resources :moodboards
 
-  resources :projects
-
-  resources :images
+  resources :projects do
+	  resources :moodboards
+	  resources :images
+  end
 
   devise_for :users
   get 'about' => 'pages#about'

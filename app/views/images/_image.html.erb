@@ -4,11 +4,11 @@
 	<p class="description">
 		<%= image.title %>
 	</p>
-	<%= link_to 'Generate Colour Palette', image %>
+	<%= link_to 'Generate Colour Palette', project_image_path(params[:project_id], image) %>
 		<% if current_user == image.user %>
 			<p>
-				<%= link_to 'Edit', edit_image_path(image) %>
-				<%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %>
+				<%= link_to 'Edit', edit_project_image_path(params[:project_id], image) %>
+				<%= link_to 'Destroy', project_image_path(params[:project_id], image), method: :delete, data: { confirm: 'Are you sure?' } %>
 			</p>
 	<% end %>
 </div>

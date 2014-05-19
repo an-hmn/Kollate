@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140517124506) do
-=======
-ActiveRecord::Schema.define(version: 20140517115222) do
->>>>>>> c27ed90d4745e0c2d1db82c5add0bb84192ab8b4
+ActiveRecord::Schema.define(version: 20140519011539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140517115222) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "source"
+    t.integer  "moodboard_id"
   end
 
   add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
@@ -39,16 +36,9 @@ ActiveRecord::Schema.define(version: 20140517115222) do
   create_table "moodboards", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
-  end
-
-=======
     t.integer  "project_id"
   end
 
-  add_index "moodboards", ["project_id"], name: "index_moodboards_on_project_id", using: :btree
-
->>>>>>> c27ed90d4745e0c2d1db82c5add0bb84192ab8b4
   create_table "projects", force: true do |t|
     t.string   "title"
     t.text     "brief"
@@ -58,10 +48,8 @@ ActiveRecord::Schema.define(version: 20140517115222) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "moodboard_id"
   end
 
-  add_index "projects", ["moodboard_id"], name: "index_projects_on_moodboard_id", using: :btree
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "users", force: true do |t|

@@ -1,4 +1,4 @@
-<%= simple_form_for(@image, html: {:multipart => true}) do |f| %>
+<%= simple_form_for(@image, url: project_images_path(@project.id), html: {:multipart => true}) do |f| %>
   <%= f.error_notification %>
 
     <%= f.input :title, label: "Enter a title" %>
@@ -10,9 +10,9 @@
 		<%= f.label :remote_source_url, "or URL" %>
 		<%= f.text_field :remote_source_url %>
 	</p>
-		<div class="form-actions">
+	<div class="form-actions">
 		<%= f.button :submit, class: "btn btn-primary" %>
-		</div>
+	</div>
 <% end %>
 
 

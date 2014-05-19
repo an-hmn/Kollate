@@ -12,6 +12,10 @@
 				<%= @project.client %>
 			</p>
 			<p>
+				<strong>Deadline:</strong>
+				<%= @project.deadline.strftime('%d/%m/%y') %>
+			</p>
+			<p>
 				<strong>Brief:</strong>
 				<%= @project.brief %>
 			</p>

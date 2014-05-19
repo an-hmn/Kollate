@@ -3,27 +3,14 @@ $(document).ready(function () {
   // ---------------------
   // Color Thief demo code
   // ---------------------
-  var imageArray = (<%= image_tag @image.source %>);
-
-  // Render example images
-  var examplesHTML = Mustache.to_html($('#image-section-template').html(), imageArray);
-  $('#example-images').append(examplesHTML);
-
-  // Event handlers
-  $('.run-functions-button').on('click', function(event) {
-    var $this = $(this);
-    $this.text('...');
-    var $imageSection     = $this.closest('.image-section');
-    var $colorThiefOutput = $imageSection.find('.color-thief-output');
-    var $targetimage      = $imageSection.find('.target-image');
-    showColorsForImage($targetimage, $imageSection);
-  });
-
-  var colorThief = new ColorThief();
-
+  
   // Run Color Thief functions and display results below image.
   // We also log execution time of functions for display.
-  var showColorsForImage = function($image, $imageSection ) {
+
+  var $image = $("#target");
+  $image.load(function () {
+    var colorThief = new ColorThief();
+
     var image                    = $image[0];
     var start                    = Date.now();
     var color                    = colorThief.getColor(image);
@@ -33,22 +20,15 @@ $(document).ready(function () {
       color: color,
       palette: palette,
     };
+
     var colorThiefOuputHTML = Mustache.to_html($('#color-thief-output-template').html(), colorThiefOutput);
+    $('.color-thief-output').html(colorThiefOuputHTML);
+  });
+  // Render example images
+  // var examplesHTML = Mustache.to_html($('#image-section-template').html(), target);
+  // $('#example-images').append(examplesHTML);
 
-    $imageSection.addClass('with-color-thief-output');
-    $imageSection.find('.run-functions-button').addClass('hide');
 
-    setTimeout(function(){
-      $imageSection.find('.color-thief-output').append(colorThiefOuputHTML).slideDown();
-      // If the color-thief-output div is not in the viewport or cut off, scroll down.
-      var windowHeight          = $(window).height();
-      var currentScrollPosition = $('body').scrollTop()
-      var outputOffsetTop       = $imageSection.find('.color-thief-output').offset().top
-      if ((currentScrollPosition < outputOffsetTop) && (currentScrollPosition + windowHeight - 250 < outputOffsetTop)) {
-         $('body').animate({scrollTop: outputOffsetTop - windowHeight + 200 + "px"});
-      }
-    }, 300);
-  };
 
   // This is not good practice. :-P
   function isMobile(){

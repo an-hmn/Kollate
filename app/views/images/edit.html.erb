@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @image %> |
-<%= link_to 'Back', images_path %>
+<%= link_to 'Show', project_image_path(@project.id, @image) %> |
+<%= link_to 'Back', project_images_path(@project.id) %>

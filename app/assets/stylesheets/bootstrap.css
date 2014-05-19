@@ -4363,19 +4363,24 @@ a.list-group-item.active > .badge,
   margin-left: 3px;
 }
 .jumbotron {
-  padding: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eeeeee;
+  height: 350px;
+  color: white;
+  text-shadow: #444 0 1px 1px;
+  background:transparent;
 }
 .jumbotron h1,
 .jumbotron .h1 {
+  margin-top: -28px;
   color: inherit;
 }
 .jumbotron p {
-  margin-bottom: 15px;
-  font-size: 21px;
-  font-weight: 200;
+  margin-top: 100px;
+  margin-bottom: 45px;
+  font-size: 18px;
+  line-height: 1.2em;
+  font-family: 'Lato', sans-serif;
+  color: black;
+  text-shadow: none;
 }
 .container .jumbotron {
   border-radius: 6px;

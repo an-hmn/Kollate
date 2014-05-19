@@ -1,9 +1,10 @@
 <tr>
 	<td><%= project.title %></td>
 	<td><%= project.client %></td>
-	<td><%= project.deadline %></td>
+	<td><%= project.deadline.strftime('%d/%m/%y') %></td>
 	<td><%= link_to 'Show', project %></td>
-	<td><%= link_to 'Start Moodboard', new_image_path(project) %></td>
+	<td><%= link_to 'Add to Moodboard', new_project_moodboard_path(project) %></td>
+	<td><%= link_to 'Show Moodboard', project_images_path(project.id)%></td>
 	<% if current_user == project.user %>
 		<td><%= link_to 'Edit', edit_project_path(project) %></td>
 		<td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

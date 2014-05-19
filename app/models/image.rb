@@ -2,14 +2,15 @@
 #
 # Table name: images
 #
-#  id         :integer          not null, primary key
-#  image      :text
-#  title      :string(255)
-#  notes      :text
-#  created_at :datetime
-#  updated_at :datetime
-#  user_id    :integer
-#  source     :string(255)
+#  id           :integer          not null, primary key
+#  image        :text
+#  title        :string(255)
+#  notes        :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#  user_id      :integer
+#  source       :string(255)
+#  moodboard_id :integer
 #
 
 class Image < ActiveRecord::Base
