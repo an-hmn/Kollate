@@ -4,9 +4,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
-# Use postgresql as the database for Active Record
-gem 'pg'
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -18,11 +15,6 @@ gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
 
 # for Heroku i think
 gem 'rails_12factor'
@@ -45,15 +37,25 @@ gem 'uglifier', '>= 1.3.0'
 # I succumbed into using this for quick design.....ugh
 gem 'bootstrap-sass', '~> 3.1.1'
 
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
+
+# Use postgresql as the database for Active Record
+group :production do
+	gem 'pg'
+end
 
 # debugging gems cos they're awesome:
-group :development do
+group :development, :test do
   gem 'pry'
   gem 'pry-rails' 
   gem 'pry-debugger' 
   gem 'pry-stack_explorer' 
   gem 'better_errors' 
   gem 'annotate'
+  gem 'rspec-rails'
 end
 
 # Use ActiveModel has_secure_password
