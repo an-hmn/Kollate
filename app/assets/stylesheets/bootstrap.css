@@ -4373,15 +4373,7 @@ a.list-group-item.active > .badge,
   margin-top: -28px;
   color: inherit;
 }
-.jumbotron p {
-  margin-top: 100px;
-  margin-bottom: 45px;
-  font-size: 18px;
-  line-height: 1.2em;
-  font-family: 'Lato', sans-serif;
-  color: black;
-  text-shadow: none;
-}
+
 .container .jumbotron {
   border-radius: 6px;
 }
