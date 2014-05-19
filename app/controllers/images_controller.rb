@@ -43,7 +43,7 @@ class ImagesController < ApplicationController
     respond_to do |format|
       if @image.save
         @project.moodboard.images << @image
-        format.html { redirect_to project_images_path(@project.id, @image.id), notice: 'Image was successfully created.' }
+        format.html { redirect_to project_images_path(@project.id), notice: 'Image was successfully created.' }
 
         format.json { render action: 'show', status: :created, location: @image }
       else
