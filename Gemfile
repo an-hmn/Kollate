@@ -58,6 +58,7 @@ group :development, :test do
   gem 'annotate'
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 2.6.1'
+  gem 'factory_girl'
 end
 
 # Use ActiveModel has_secure_password
