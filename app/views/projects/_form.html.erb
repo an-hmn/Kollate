@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<%= simple_form_for(@project, html: {:multipart => true}) do |f| %>
+<%= simple_form_for(@project, :html => {:class => 'well form-horizontal'}) do |f| %>
   <%= f.error_notification %>
 
   <div><%= f.label :title, label: "Title of project" %><br />

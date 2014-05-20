@@ -1,4 +1,4 @@
-<%= simple_form_for(@image, url: project_images_path(@project.id), html: {:multipart => true}) do |f| %>
+<%= simple_form_for(@image, url: project_images_path(@project.id), :html => {:class => 'well form-horizontal'}) do |f| %>
   <%= f.error_notification %>
 
     <%= f.input :title, label: "Enter a title" %>

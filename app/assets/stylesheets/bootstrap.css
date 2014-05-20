@@ -2083,6 +2083,7 @@ fieldset[disabled] .btn-default.active {
   color: #ffffff;
   background-color: #2fa4e7;
   border-color: #2fa4e7;
+  margin-top: 10px;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2165,6 +2166,7 @@ fieldset[disabled] .btn-success.active {
   color: #ffffff;
   background-color: #033c73;
   border-color: #033c73;
+  margin-top: 10px;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -5855,6 +5857,7 @@ button.close {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff88c149', endColorstr='#ff699934', GradientType=0);
   filter: none;
   border-bottom: 1px solid #59822c;
+  margin-top: 10px;
 }
 .btn-info {
   background-image: -webkit-linear-gradient(#04519b, #033c73 60%, #02325f);
