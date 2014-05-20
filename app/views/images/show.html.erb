@@ -49,8 +49,8 @@
 <script src="javascripts/palette.js"></script>
 
 
-<div class="row">
-<div class="span6 offset3">
+<!-- <div class="row"> -->
+<!-- <div class="span6 offset3"> -->
       <%= image_tag @image.source, :id => "target" %>
       <div class="color-thief-output"></div>
     <p>
@@ -58,19 +58,15 @@
         <%= link_to 'Edit', edit_project_image_path(@project, @image) %> |
       <% end %>
       <%= link_to 'Back', project_images_path(@project) %>
-</div>
-</div>
+<!-- </div> -->
+<!-- </div> -->
 
 <style>
 
-
-/* line 32, ../../../../.rvm/gems/ruby-1.9.2-p320/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* Images */
-/* line 81, ../sass/app.sass */
 img {
   display: block;
 }

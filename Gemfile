@@ -57,6 +57,7 @@ group :development, :test do
   gem 'better_errors' 
   gem 'annotate'
   gem 'rspec-rails'
+  gem 'shoulda-matchers', '~> 2.6.1'
 end
 
 # Use ActiveModel has_secure_password
