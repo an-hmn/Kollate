@@ -8,7 +8,7 @@ Kollate is a Content Management System for designers who need a platform to stor
 **Features**
 * Add your brief to a project and include notes
 * Create a moodboard to track images you sourced for inspiration
-* Head to Inspiration for inspiration drawn from Dribbble
+* Inspiration shows you design ideas drawn from the Dribbble API
 
 **Gems used**
 * Devise - for authentication
