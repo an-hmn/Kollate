@@ -14,7 +14,7 @@
 #
 
 class Project < ActiveRecord::Base
-	attr_accessible :title, :brief, :deadline, :client, :sidenotes, :colour_id, :user_id
+	attr_accessible :title, :brief, :deadline, :client, :sidenotes, :user_id
     belongs_to :user
     has_many :images, through: :moodboards
     has_one :moodboard

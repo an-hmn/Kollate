@@ -49,7 +49,7 @@ group :production do
 end
 
 # debugging gems cos they're awesome:
-group :development, :test do
+group :development do
   gem 'pry'
   gem 'pry-rails' 
   gem 'pry-debugger' 
@@ -57,8 +57,11 @@ group :development, :test do
   gem 'better_errors' 
   gem 'annotate'
   gem 'rspec-rails'
-  gem 'shoulda-matchers', '~> 2.6.1'
-  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'guard-rspec'
 end
 
 # Use ActiveModel has_secure_password
