@@ -21,6 +21,7 @@ Kollate is a Content Management System for designers who need a platform to stor
 **jQuery plugins**
 * Masonry - for the layout of the moodboards
 * Colour Thief - for the colour palette generator
+* jRibbble - for accessing the Dribbble API
 
 **Version 2**
 * Integrate AJAX and have infinite scroll on inspiration page
