@@ -18,6 +18,9 @@ Kollate is a Content Management System for designers who need a platform to stor
 * Simple Form - for better looking forms but did jack all
 * Rspec - for testing
 
+**jQuery plugins**
+* Masonry - for the layout of the moodboards
+* Colour Thief - for the colour palette generator
 
 **Version 2**
 * Integrate AJAX and have infinite scroll on inspiration page
