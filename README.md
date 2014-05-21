@@ -25,6 +25,6 @@ Kollate is a Content Management System for designers who need a platform to stor
 **Version 2**
 * Integrate AJAX and have infinite scroll on inspiration page
 * The ability for other users to contribute to your moodboards and add notes to briefs
-* Integarte a working dashboard with analytics
+* Integrate a working dashboard with analytics
 * The ability to delete individual colours from the palette and also to create and save swatches
 * BETTER DESIGN!
